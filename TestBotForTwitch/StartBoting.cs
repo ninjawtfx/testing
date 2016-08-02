@@ -31,8 +31,6 @@ namespace TestBotForTwitch
 			page.UserNameInputSetText(login);
 			page.PasswordInputSetText(password);
 
-			MessageBox.Show("Помогите Маше пройти капчу", "кек", MessageBoxButtons.OK);
-
 			page.SubmitInputClick();
 		}
 
@@ -46,8 +44,6 @@ namespace TestBotForTwitch
 			var mainPage = new MainPage(_driver);
 
 			mainPage.GetPage();
-
-			GoToStreamerPage(url);
 
 			Thread.Sleep(5000);
 

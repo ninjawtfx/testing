@@ -22,27 +22,14 @@ namespace TestBotForTwitch
     public partial class Form1 : Form
     {
         public IWebDriver Driver;
-		public string StreamerUrl = "https://2ip.ru";
+		public string StreamerUrl = "https://www.twitch.tv/cn_lion";
 
-		public List<Proxy> proxies = new List<Proxy>();
+		public List<string> proxies = new List<string>();
 
 
         public Form1()
         {
             InitializeComponent();
-
-
-			//proxies.Add(new Proxy { HttpProxy = "198.2.202.43:8090" });
-			//proxies.Add(new Proxy { HttpProxy = "104.220.35.53:14843" });
-			proxies.Add(new Proxy { HttpProxy = "socks5://103.208.78.21:48111" });
-			proxies.Add(new Proxy { HttpProxy = "socks4://1.175.139.171:3129" });
-			
-			proxies.Add(new Proxy { HttpProxy = "1.175.139.171:3129" });
-
-			proxies.Add(new Proxy { HttpProxy = "212.158.161.241:80" });
-			
-
-
         }
 
         private void GO()
@@ -59,6 +46,8 @@ namespace TestBotForTwitch
 			List<string> logins = Files.GetAccountNamesFromFile();
 			List<StartBoting> listBots = new List<StartBoting>();
 
+			proxies = Files.GetProxyies();
+
 			string password = "q123456789q";
 
 			int i = 0;
@@ -73,7 +62,7 @@ namespace TestBotForTwitch
 
 				ChromeOptions options = new ChromeOptions();
 
-				options.AddArguments(string.Format("--proxy-server={0}",proxies[i].HttpProxy));
+				options.AddArguments(string.Format("--proxy-server={0}",proxies[i]));
 
 				Driver = new ChromeDriver(options);
 

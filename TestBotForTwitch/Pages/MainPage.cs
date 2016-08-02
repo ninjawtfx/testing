@@ -21,7 +21,7 @@ namespace TestBotForTwitch.Pages
         public MainPage(IWebDriver driver)
         {
             _driver = driver;
-            _url = "https://www.twitch.tv/directory";
+			_url = "https://www.twitch.tv/trustykel";
 
             PageFactory.InitElements(_driver, this);
 
@@ -51,7 +51,7 @@ namespace TestBotForTwitch.Pages
 
         private IWebElement SugnUpButton { get; set; }
 
-		[FindsBy(How = How.XPath, Using = "(//span[@class='ember-view']//button)[1]")]
+		[FindsBy(How = How.XPath, Using = "//a[text()='Вход в систему' and @class='button']")]
 
 		private IWebElement SignUpButton { get; set; }
 

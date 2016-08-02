@@ -13,6 +13,7 @@ namespace TestBotForTwitch
 		private static string _names = "Files/Names.txt";
 		private static string _lastNames = "Files/LastNames.txt";
 		private static string _accounts = "Files/Accounts.txt";
+		private static string _proxies = "Files/Proxyies.txt";
 
 		static public void SettingsNames()
 		{
@@ -80,6 +81,23 @@ namespace TestBotForTwitch
 			using (StreamReader sr = new StreamReader(_accounts, System.Text.Encoding.Default))
 			{
 				return sr.ReadToEnd().Split(';').ToList();
+			}
+		}
+
+		static public List<string> GetProxyies()
+		{
+			using (StreamReader sr = new StreamReader(_proxies, System.Text.Encoding.Default))
+			{
+				var list = new List<string>();
+
+				string line;
+
+				while ((line = sr.ReadLine()) != null)
+				{
+					list.Add(line);
+				}
+
+				return list;
 			}
 		}
 	}

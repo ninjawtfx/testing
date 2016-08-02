@@ -50,3 +50,4 @@ C:\botForTwith\testing\TestBotForTwitch\obj\Debug\TestBotForTwitch.csprojResolve
 C:\botForTwith\testing\TestBotForTwitch\obj\Debug\TestBotForTwitch.Form1.resources
 C:\botForTwith\testing\TestBotForTwitch\obj\Debug\TestBotForTwitch.Properties.Resources.resources
 C:\botForTwith\testing\TestBotForTwitch\obj\Debug\TestBotForTwitch.csproj.GenerateResource.Cache
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\Files\Proxyies.txt
