@@ -1,0 +1,52 @@
+c:\users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\TestBotForTwitch.exe.config
+c:\users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\chromedriver.exe
+c:\users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\chromedriver-license.txt
+c:\users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\TestBotForTwitch.exe
+c:\users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\TestBotForTwitch.pdb
+c:\users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\WebDriver.dll
+c:\users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\WebDriver.Support.dll
+c:\users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\WebDriver.xml
+c:\users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\WebDriver.Support.xml
+c:\users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\obj\Debug\TestBotForTwitch.csprojResolveAssemblyReference.cache
+c:\users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\obj\Debug\TestBotForTwitch.Form1.resources
+c:\users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\obj\Debug\TestBotForTwitch.Properties.Resources.resources
+c:\users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\obj\Debug\TestBotForTwitch.csproj.GenerateResource.Cache
+c:\users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\obj\Debug\TestBotForTwitch.exe
+c:\users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\obj\Debug\TestBotForTwitch.pdb
+C:\Users\lexa\Documents\Visual Studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\MongoDB.Bson.dll
+C:\Users\lexa\Documents\Visual Studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\lexa\Documents\Visual Studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\MongoDB.Driver.dll
+C:\Users\lexa\Documents\Visual Studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\MongoDB.Driver.Legacy.dll
+C:\Users\lexa\Documents\Visual Studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\MongoDB.Bson.xml
+C:\Users\lexa\Documents\Visual Studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\MongoDB.Driver.xml
+C:\Users\lexa\Documents\Visual Studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\MongoDB.Driver.Legacy.xml
+C:\Users\lexa\Documents\Visual Studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\Files\LastNames.txt
+C:\Users\lexa\Documents\Visual Studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\Files\Names.txt
+C:\Users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\Files\Accounts.txt
+C:\Users\lexa\documents\visual studio 2013\Projects\TestBotForTwitch\TestBotForTwitch\bin\Debug\wires-0.6.0-win.exe
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\TestBotForTwitch.exe.config
+C:\botForTwith\testing\TestBotForTwitch\obj\Debug\TestBotForTwitch.exe
+C:\botForTwith\testing\TestBotForTwitch\obj\Debug\TestBotForTwitch.pdb
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\wires-0.6.0-win.exe
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\chromedriver-license.txt
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\chromedriver.exe
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\Files\Accounts.txt
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\Files\LastNames.txt
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\Files\Names.txt
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\TestBotForTwitch.exe
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\TestBotForTwitch.pdb
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\MongoDB.Bson.dll
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\MongoDB.Driver.Core.dll
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\MongoDB.Driver.dll
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\MongoDB.Driver.Legacy.dll
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\WebDriver.dll
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\WebDriver.Support.dll
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\MongoDB.Bson.xml
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\MongoDB.Driver.xml
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\MongoDB.Driver.Legacy.xml
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\WebDriver.xml
+C:\botForTwith\testing\TestBotForTwitch\bin\Debug\WebDriver.Support.xml
+C:\botForTwith\testing\TestBotForTwitch\obj\Debug\TestBotForTwitch.csprojResolveAssemblyReference.cache
+C:\botForTwith\testing\TestBotForTwitch\obj\Debug\TestBotForTwitch.Form1.resources
+C:\botForTwith\testing\TestBotForTwitch\obj\Debug\TestBotForTwitch.Properties.Resources.resources
+C:\botForTwith\testing\TestBotForTwitch\obj\Debug\TestBotForTwitch.csproj.GenerateResource.Cache
