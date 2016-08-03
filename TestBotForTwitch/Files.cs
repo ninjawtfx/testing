@@ -14,6 +14,7 @@ namespace TestBotForTwitch
 		private static string _lastNames = "Files/LastNames.txt";
 		private static string _accounts = "Files/Accounts.txt";
 		private static string _proxies = "Files/Proxyies.txt";
+		private static string _helloReplic = "Files/Replics/{0}Hello.txt";
 
 		static public void SettingsNames()
 		{
@@ -46,6 +47,23 @@ namespace TestBotForTwitch
 		{
 			string result;
 			using (StreamReader sr = new StreamReader(_names, System.Text.Encoding.Default))
+			{
+				List<string> lines = new List<string>();
+
+				lines = sr.ReadToEnd().Split(';').ToList();
+
+				int rnd = new Random().Next(0, lines.Count);
+
+				result = lines[rnd];
+			}
+
+			return result;
+		}
+
+		static public string GetHelloReplic(Roles role)
+		{
+			string result;
+			using (var sr = new StreamReader(string.Format(_helloReplic, role.Description()), System.Text.Encoding.Default))
 			{
 				List<string> lines = new List<string>();
 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TestBotForTwitch.Class
+﻿namespace TestBotForTwitch.Class
 {
 	public class FakeAccount
 	{
@@ -15,7 +9,7 @@ namespace TestBotForTwitch.Class
 		public FakeAccount(string name, string pass, Roles role)
 		{
 			Name = name;
-			pass = Password;
+			Password = pass;
 			Role = role;
 		}
 	}

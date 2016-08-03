@@ -9,13 +9,14 @@ using OpenQA.Selenium.Remote;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.Extensions;
+using TestBotForTwitch.Class;
 
 namespace TestBotForTwitch.Pages
 {
 	public class SignInTwitchPage : MainPage
 	{
 
-		public SignInTwitchPage(IWebDriver driver)
+		public SignInTwitchPage(Driver driver)
 			: base(driver)
         {
 

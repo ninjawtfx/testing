@@ -79,8 +79,5 @@ C:\TwitchBot\testing\TestBotForTwitch\obj\Debug\TestBotForTwitch.Form1.resources
 C:\TwitchBot\testing\TestBotForTwitch\obj\Debug\TestBotForTwitch.Properties.Resources.resources
 C:\TwitchBot\testing\TestBotForTwitch\obj\Debug\TestBotForTwitch.csproj.GenerateResource.Cache
 C:\TwitchBot\testing\TestBotForTwitch\obj\Debug\TestBotForTwitch.Forms.ProxyDialog.resources
-C:\TwitchBot\testing\TestBotForTwitch\bin\Debug\CookComputing.XmlRpcV3.dll
-C:\TwitchBot\testing\TestBotForTwitch\bin\Debug\OpenXNet.dll
 C:\TwitchBot\testing\TestBotForTwitch\bin\Debug\xNet.dll
-C:\TwitchBot\testing\TestBotForTwitch\bin\Debug\OpenXNet.pdb
-C:\TwitchBot\testing\TestBotForTwitch\bin\Debug\OpenXNet.xml
+C:\TwitchBot\testing\TestBotForTwitch\bin\Debug\Files\Replics\AgrHello.txt

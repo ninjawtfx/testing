@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,9 @@ namespace TestBotForTwitch
 {
     public enum Roles
     {
-        agressive = 0,
-        peacefull = 1
+		[Description("Agr")]
+        Agressive = 0,
+		[Description("Peace")]
+        Peacefull = 1
     }
 }

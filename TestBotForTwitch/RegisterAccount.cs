@@ -9,9 +9,9 @@ namespace TestBotForTwitch
     public class RegisterAccount
     {
         public RegistrationModel Account { get; set; }
-        private IWebDriver _driver { get; set; }
+        private Driver _driver { get; set; }
 
-        public RegisterAccount(IWebDriver driver, RegistrationModel account)
+        public RegisterAccount(Driver driver, RegistrationModel account)
         {
             _driver = driver;
             Account = account;

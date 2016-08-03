@@ -11,5 +11,9 @@ namespace TestBotForTwitch
 		public static string StreamerUrl = "https://www.twitch.tv/cn_lion";
 
 		public static List<string> Proxies = Files.GetProxyies();
+
+		public static List<Bot> ListBots = new List<Bot>();
+
+		public static string Password = "q123456789q";
 	}
 }

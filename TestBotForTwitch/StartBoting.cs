@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium.Remote;
+﻿using System.IO;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
-using System.Threading;
 
+using System.Threading;
+using TestBotForTwitch.Class;
 using TestBotForTwitch.Pages;
 
 namespace TestBotForTwitch
 {
-	public class StartBoting
+	public class Bot
 	{
-		private IWebDriver _driver;
+		private Driver _driver;
 
-		public StartBoting(IWebDriver driver)
+		public FakeAccount Account;
+
+		public Bot(Driver driver, string login, string password, Roles role)
 		{
 			_driver = driver;
+
+			Account = new FakeAccount(login, password, role);
 		}
 
 		public void SignIn(string login, string password)
@@ -39,7 +35,7 @@ namespace TestBotForTwitch
 			_driver.Navigate().GoToUrl(url);
 		}
 
-		public void GetStart(IWebDriver driver, string url, string login, string password)
+		public void GetStart(string url)
 		{
 			var mainPage = new MainPage(_driver);
 
@@ -51,8 +47,14 @@ namespace TestBotForTwitch
 
 			Thread.Sleep(4000);
 
-			SignIn(login, password);
+			SignIn(Account.Name, Account.Password);
 
+			mainPage.SendMessageInChat(GetHelloReplic());
+		}
+
+		public string GetHelloReplic()
+		{
+			return Files.GetHelloReplic(Account.Role);
 		}
 	}
 }

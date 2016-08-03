@@ -18,17 +18,17 @@ namespace TestBotForTwitch
 {
 	public class AccountsFabric
 	{
-		private IWebDriver _driver;
+		private Driver _driver;
 		private RegistrationModel _modelForRegistration;
 		public FakeAccount FakeAccount;
 
-		public AccountsFabric(IWebDriver driver, RegistrationModel model)
+		public AccountsFabric(Driver driver, RegistrationModel model)
 		{
 			_driver = driver;
 			_modelForRegistration = model;
 		}
 
-		public AccountsFabric(IWebDriver driver)
+		public AccountsFabric(Driver driver)
 		{
 			_driver = driver;
 		}

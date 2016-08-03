@@ -1,18 +1,20 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using xNet;
 
 using OpenQA.Selenium;
 
 namespace TestBotForTwitch
 {
-    public static class Extens
-    {
-        		/// <summary>
+	public static class Extens
+	{
+		/// <summary>
 		/// Вводим текст, предварительно отчистив поле web-элемента
 		/// </summary>
 		/// <param name="webElement">элемент</param>
@@ -37,7 +39,7 @@ namespace TestBotForTwitch
 
 				expectedText = expectedText ?? text;
 			} // TrimEnd(' ') используется в связи с тем, что иногда редактор добавляет в конце слова пробел
-			// webElement.Text нужен, потому что value есть не у всех элементов
+				// webElement.Text нужен, потому что value есть не у всех элементов
 			while (i < 3 && webElement.GetAttribute("value") != expectedText && webElement.Text.TrimEnd(' ') != expectedText);
 
 			if (webElement.GetAttribute("value") != expectedText && webElement.Text.TrimEnd(' ') != expectedText)
@@ -46,27 +48,44 @@ namespace TestBotForTwitch
 			}
 		}
 
-	    public static bool CheckProxy(string proxyLine)
-	    {
-		  //  proxyLine = proxyLine.Remove(proxyLine.IndexOf('/'), 2);
-		    
-		    string[] proxyies = proxyLine.Trim('/').Split(':');
-		    string url = proxyies[1];
-		    string port = proxyies[2];
-			
-			WebRequest wReq = WebRequest.Create(Settings.StreamerUrl);
-			//wReq.Proxy = new WebProxy(url, Int32.Parse(port));
+		public static bool CheckProxy(string proxyLine)
+		{
+			proxyLine = proxyLine.Remove(proxyLine.IndexOf('/'), 2);
+
+			string[] proxyies = proxyLine.Trim('/').Split(':');
+			string url = proxyies[1];
+			string port = proxyies[2];
+
+			ProxyClient proxyClient;
+
+			switch (proxyies[0])
+			{
+				case "socks4":
+					proxyClient = new Socks4ProxyClient(url, Int32.Parse(port));
+					break;
+				case "socks5":
+					proxyClient = new Socks5ProxyClient(url, Int32.Parse(port));
+					break;
+				default:
+					proxyClient = new Socks4ProxyClient(url, Int32.Parse(port));
+					break;
+			}
 
 			try
 			{
-				WebResponse wRes = wReq.GetResponse();
+				using (var request = new HttpRequest())
+				{
+					request.Proxy = proxyClient;
+					request.Get("ya.ru");
+				}
 			}
-			catch (Exception e)
+			catch (HttpException ex)
 			{
-				Console.WriteLine("Proxy not enabled");
-			}
 
-		    return true;
-	    }
-    }
+				return false;
+			}
+			return false;
+		}
+
+	}
 }

@@ -24,7 +24,7 @@ namespace TestBotForTwitch.Forms
 
 		private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
 		{
-			Extens.CheckProxy(listBox1.SelectedItem.ToString());
+			label2.Text = Extens.CheckProxy(listBox1.SelectedItem.ToString()).ToString();
 		}
 
 		

@@ -9,6 +9,7 @@ using OpenQA.Selenium.Remote;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.Extensions;
+using TestBotForTwitch.Class;
 
 namespace TestBotForTwitch.Pages
 {
@@ -16,7 +17,7 @@ namespace TestBotForTwitch.Pages
     {
 
         
-        public SignUpPage(IWebDriver driver) : base(driver)
+        public SignUpPage(Driver driver) : base(driver)
         {
 
         }

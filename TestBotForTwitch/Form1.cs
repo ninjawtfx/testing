@@ -2,23 +2,15 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium;
-
 using TestBotForTwitch.Forms;
+using TestBotForTwitch.Class;
 
 namespace TestBotForTwitch
 {
 	public partial class Form1 : Form
 	{
-		public IWebDriver Driver;
-	
 		public List<string> Logins = Files.GetAccountNamesFromFile();
-
-		public List<StartBoting> listBots = new List<StartBoting>();
-
-		private string password = "q123456789q";
-
+		
 		private Int32 _countViewers;
 
 		public Form1()
@@ -28,23 +20,15 @@ namespace TestBotForTwitch
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			int i = 0;
-
-			foreach (var item in Logins)
+			for (int i = 0; i < _countViewers; i++)
 			{
-				ChromeOptions options = new ChromeOptions();
+				var driver = new Driver();
 
-				options.AddArguments(string.Format("--proxy-server={0}", Settings.Proxies[i]));
+				var start = new Bot(driver, Logins[i], Settings.Password, Roles.Agressive);
 
-				Driver = new ChromeDriver(options);
+				start.GetStart(Settings.StreamerUrl);
 
-				var start = new StartBoting(Driver);
-
-				start.GetStart(Driver, Settings.StreamerUrl, item, password);
-
-				listBots.Add(start);
-
-				i++;
+				Settings.ListBots.Add(start);
 			}
 		}
 
@@ -58,6 +42,11 @@ namespace TestBotForTwitch
 			var proxyDialog = new ProxyDialog();
 
 			proxyDialog.ShowDialog();
+		}
+
+		private void textBox2_TextChanged(object sender, EventArgs e)
+		{
+			Settings.StreamerUrl = textBox2.Text;
 		}
 	}
 }
