@@ -38,9 +38,15 @@
 			this.twitchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.proxyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.командыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.бунтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
+			this.смехToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.диалогToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.любопытныйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.оДаунахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -66,7 +72,9 @@
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.регистрацияToolStripMenuItem,
-            this.настройкиToolStripMenuItem});
+            this.настройкиToolStripMenuItem,
+            this.командыToolStripMenuItem,
+            this.диалогToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(586, 24);
@@ -124,6 +132,22 @@
 			this.proxyToolStripMenuItem.Text = "Proxy";
 			this.proxyToolStripMenuItem.Click += new System.EventHandler(this.proxyToolStripMenuItem_Click);
 			// 
+			// командыToolStripMenuItem
+			// 
+			this.командыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.бунтToolStripMenuItem,
+            this.смехToolStripMenuItem});
+			this.командыToolStripMenuItem.Name = "командыToolStripMenuItem";
+			this.командыToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+			this.командыToolStripMenuItem.Text = "Команды";
+			// 
+			// бунтToolStripMenuItem
+			// 
+			this.бунтToolStripMenuItem.Name = "бунтToolStripMenuItem";
+			this.бунтToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.бунтToolStripMenuItem.Text = "Бунт";
+			this.бунтToolStripMenuItem.Click += new System.EventHandler(this.бунтToolStripMenuItem_Click);
+			// 
 			// textBox2
 			// 
 			this.textBox2.Location = new System.Drawing.Point(6, 79);
@@ -149,6 +173,36 @@
 			this.label2.Size = new System.Drawing.Size(51, 13);
 			this.label2.TabIndex = 5;
 			this.label2.Text = "Стример";
+			// 
+			// смехToolStripMenuItem
+			// 
+			this.смехToolStripMenuItem.Name = "смехToolStripMenuItem";
+			this.смехToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.смехToolStripMenuItem.Text = "Смех";
+			this.смехToolStripMenuItem.Click += new System.EventHandler(this.смехToolStripMenuItem_Click);
+			// 
+			// диалогToolStripMenuItem
+			// 
+			this.диалогToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.любопытныйToolStripMenuItem,
+            this.оДаунахToolStripMenuItem});
+			this.диалогToolStripMenuItem.Name = "диалогToolStripMenuItem";
+			this.диалогToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+			this.диалогToolStripMenuItem.Text = "Диалог";
+			// 
+			// любопытныйToolStripMenuItem
+			// 
+			this.любопытныйToolStripMenuItem.Name = "любопытныйToolStripMenuItem";
+			this.любопытныйToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.любопытныйToolStripMenuItem.Text = "Любопытный";
+			this.любопытныйToolStripMenuItem.Click += new System.EventHandler(this.любопытныйToolStripMenuItem_Click);
+			// 
+			// оДаунахToolStripMenuItem
+			// 
+			this.оДаунахToolStripMenuItem.Name = "оДаунахToolStripMenuItem";
+			this.оДаунахToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.оДаунахToolStripMenuItem.Text = "О даунах";
+			this.оДаунахToolStripMenuItem.Click += new System.EventHandler(this.оДаунахToolStripMenuItem_Click);
 			// 
 			// Form1
 			// 
@@ -186,6 +240,12 @@
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.ToolStripMenuItem командыToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem бунтToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem смехToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem диалогToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem любопытныйToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem оДаунахToolStripMenuItem;
     }
 }
 

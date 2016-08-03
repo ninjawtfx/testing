@@ -1,4 +1,6 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Xml;
 using OpenQA.Selenium;
 
 using System.Threading;
@@ -12,12 +14,17 @@ namespace TestBotForTwitch
 		private Driver _driver;
 
 		public FakeAccount Account;
+		private MainPage _mainPage;
 
 		public Bot(Driver driver, string login, string password, Roles role)
 		{
 			_driver = driver;
 
 			Account = new FakeAccount(login, password, role);
+
+			_mainPage = new MainPage(_driver);
+
+			_mainPage.GetPage();
 		}
 
 		public void SignIn(string login, string password)
@@ -37,24 +44,44 @@ namespace TestBotForTwitch
 
 		public void GetStart(string url)
 		{
-			var mainPage = new MainPage(_driver);
-
-			mainPage.GetPage();
-
 			Thread.Sleep(5000);
 
-			mainPage.ClickSignUpButton();
+			_mainPage.ClickSignUpButton();
 
 			Thread.Sleep(4000);
 
 			SignIn(Account.Name, Account.Password);
 
-			mainPage.SendMessageInChat(GetHelloReplic());
+			_mainPage.SendMessageInChat(GetHelloReplic());
 		}
 
 		public string GetHelloReplic()
 		{
 			return Files.GetHelloReplic(Account.Role);
+		}
+
+		public void Say(string text)
+		{
+			_mainPage.SendMessageInChat(text);
+		}
+
+		public void Bunt()
+		{
+			_mainPage.SendMessageInChat("БУНТ!!!!!!!!!!!");
+		}
+
+		public void Laught()
+		{
+			var rnd = new Random().Next(20);
+
+			string result = string.Empty;
+
+			for (int i = 0; i < rnd; i++)
+			{
+				result += "ах";
+			}
+
+			_mainPage.SendMessageInChat(result);
 		}
 	}
 }

@@ -15,35 +15,36 @@ namespace TestBotForTwitch
 		private static string _accounts = "Files/Accounts.txt";
 		private static string _proxies = "Files/Proxyies.txt";
 		private static string _helloReplic = "Files/Replics/{0}Hello.txt";
+		private static string _questionsToStreamer = "Files/Questions/Streamer.txt";
 
-		static public void SettingsNames()
+		public static void SettingsNames()
 		{
 			List<string> linesForCopy = new List<string>();
 			using (StreamReader sr = new StreamReader(_names, System.Text.Encoding.Default))
 			{
 				List<string> lines = new List<string>();
-				
+
 				string line;
 				while ((line = sr.ReadLine()) != null)
 				{
 					lines.Add(line);
 				}
 
-				foreach(var item in lines)
+				foreach (var item in lines)
 				{
-					linesForCopy.Add(item + ";");					
+					linesForCopy.Add(item + ";");
 				}
 			}
 
 			using (StreamWriter sw = new StreamWriter(_lastNames, true, System.Text.Encoding.Default))
 			{
-				foreach(var item in linesForCopy)
-				sw.Write(item);
+				foreach (var item in linesForCopy)
+					sw.Write(item);
 			}
 
 		}
 
-		static public string GetName()
+		public static string GetName()
 		{
 			string result;
 			using (StreamReader sr = new StreamReader(_names, System.Text.Encoding.Default))
@@ -60,7 +61,7 @@ namespace TestBotForTwitch
 			return result;
 		}
 
-		static public string GetHelloReplic(Roles role)
+		public static string GetHelloReplic(Roles role)
 		{
 			string result;
 			using (var sr = new StreamReader(string.Format(_helloReplic, role.Description()), System.Text.Encoding.Default))
@@ -77,7 +78,7 @@ namespace TestBotForTwitch
 			return result;
 		}
 
-		static public string GetLastName()
+		public static string GetLastName()
 		{
 			string result;
 			using (StreamReader sr = new StreamReader(_lastNames, System.Text.Encoding.Default))
@@ -88,13 +89,32 @@ namespace TestBotForTwitch
 
 				int rnd = new Random().Next(0, lines.Count);
 
-				result = lines[rnd+1];
+				result = lines[rnd + 1];
 			}
 
 			return result;
 		}
 
-		static public List<string> GetAccountNamesFromFile()
+		public static string GetQuestion()
+		{
+			using (StreamReader sr = new StreamReader(_proxies, System.Text.Encoding.Default))
+			{
+				var list = new List<string>();
+
+				string line;
+
+				while ((line = sr.ReadLine()) != null)
+				{
+					list.Add(line);
+				}
+
+				var rnd = new Random().Next(0, list.Count);
+
+				return list[rnd];
+			}
+		}
+
+	static public List<string> GetAccountNamesFromFile()
 		{
 			using (StreamReader sr = new StreamReader(_accounts, System.Text.Encoding.Default))
 			{

@@ -14,4 +14,10 @@ namespace TestBotForTwitch
 		[Description("Peace")]
         Peacefull = 1
     }
+
+	public enum Thems
+	{
+		[Description("О долбаебах")]
+		AboutDauns = 0
+	}
 }

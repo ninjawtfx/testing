@@ -9,12 +9,17 @@ namespace TestBotForTwitch.Class
 {
 	public class Driver : IWebDriver
 	{
+		public static readonly TimeSpan ImplicitWait = new TimeSpan(0, 0, 0, 3);
+		public static readonly TimeSpan NoWait = new TimeSpan(0, 0, 0, 0);
+
 		private IWebDriver _driver;
 		public Driver(string proxy)
 		{
 			var options = new ChromeOptions();
 
 			options.AddArguments(string.Format("--proxy-server={0}", proxy));
+
+			_driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromMinutes(2));
 
 			_driver = new ChromeDriver(options);
 		}
@@ -31,7 +36,7 @@ namespace TestBotForTwitch.Class
 
 		public bool WaitUntilElementIsEnabled(By by, int timeout = 10)
 		{
-			var wait = new WebDriverWait(this, TimeSpan.FromSeconds(timeout));
+			var wait = new WebDriverWait(this, TimeSpan.FromMinutes(timeout));
 
 			try
 			{
@@ -134,6 +139,48 @@ namespace TestBotForTwitch.Class
 			catch (WebDriverTimeoutException)
 			{
 				return null;
+			}
+		}
+
+		/// <summary>
+		/// Ждем, пропадет ли элемент
+		/// </summary>
+		/// <param name="by">локатор</param>
+		/// <param name="timeout">время ожидания</param>
+		public bool WaitUntilElementIsDisappeared(By by, int timeout = 10)
+		{
+			_driver.Manage().Timeouts().ImplicitlyWait(NoWait);
+			var wait = new WebDriverWait(this, TimeSpan.FromSeconds(timeout));
+
+			try
+			{
+				var result = wait.Until(ExpectedConditions.InvisibilityOfElementLocated(by));
+				_driver.Manage().Timeouts().ImplicitlyWait(ImplicitWait);
+				return result;
+			}
+			catch (WebDriverTimeoutException)
+			{
+				_driver.Manage().Timeouts().ImplicitlyWait(ImplicitWait);
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Ждем, отобразится ли элемент
+		/// </summary>
+		/// <param name="by">локатор</param>
+		/// <param name="timeout">время ожидания</param>
+		public bool WaitUntilElementIsDisplay(By by, int timeout = 10)
+		{
+			var wait = new WebDriverWait(this, TimeSpan.FromMinutes(timeout));
+
+			try
+			{
+				return wait.Until(d => ((Driver)d).FindElement(by).Displayed);
+			}
+			catch (NotFoundException)
+			{
+				return false;
 			}
 		}
 	}

@@ -81,3 +81,4 @@ C:\TwitchBot\testing\TestBotForTwitch\obj\Debug\TestBotForTwitch.csproj.Generate
 C:\TwitchBot\testing\TestBotForTwitch\obj\Debug\TestBotForTwitch.Forms.ProxyDialog.resources
 C:\TwitchBot\testing\TestBotForTwitch\bin\Debug\xNet.dll
 C:\TwitchBot\testing\TestBotForTwitch\bin\Debug\Files\Replics\AgrHello.txt
+C:\TwitchBot\testing\TestBotForTwitch\bin\Debug\Files\Questions\Streamer.txt

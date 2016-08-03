@@ -66,9 +66,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountsFabric.cs" />
+    <Compile Include="Class\Dialogs.cs" />
     <Compile Include="Class\Driver.cs" />
     <Compile Include="Class\FakeAccount.cs" />
     <Compile Include="Class\RegistrationModel.cs" />
+    <Compile Include="Class\Talk.cs" />
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Extens.cs" />
@@ -147,6 +149,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Files\Proxyies.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Questions\Streamer.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Files\Replics\AgrHello.txt">

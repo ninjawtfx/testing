@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium.Remote;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System.Threading;
+
 using TestBotForTwitch.Class;
 
 
@@ -48,27 +42,33 @@ namespace TestBotForTwitch.Pages
 
 	    public void MessageSetText(string text)
 	    {
-			Extens.SetText(MessageArea, text);
+		    if(_driver.WaitUntilElementIsEnabled(By.XPath("//div[@class='textarea-contain']//textarea")))
+				Extens.SetText(MessageArea, text);
 	    }
 
 	    public void MessageSendClick()
 	    {
-			MessageSendButton.Click();
+		    var button =
+			    _driver.WaitUntilElementIsClickable(By.XPath("//div[@class='chat-buttons-container clearfix']//button"));
+			button.Click();
 	    }
 
 	    public void SendMessageInChat(string text)
 	    {
-		    _driver.WaitUntilElementIsEnabled(By.XPath("//div[@class='chat-buttons-container clearfix']//button"));
-
-		    _driver.WaitUntilElementIsClickable(By.XPath("//div[@class='chat-buttons-container clearfix']//button"));
-
-		    MessageSetText(text);
-			MessageSendClick();
+		    if (LoadPage())
+		    {
+			    MessageSetText(text);
+			    MessageSendClick();
+		    }
 	    }
 
+	    public bool LoadPage()
+	    {
+			return(_driver.WaitUntilElementIsDisappeared(By.XPath("//div[@class='twitch_subwindow_container']"))
+			&& _driver.WaitUntilElementIsDisplay(By.XPath("//div[@class='chat-interface']")));
+	    }
 
-
-        [FindsBy(How = How.XPath, Using = "//*[@id='right_col']/div/div[2]/div/div[2]/a[2]")]
+	    [FindsBy(How = How.XPath, Using = "//*[@id='right_col']/div/div[2]/div/div[2]/a[2]")]
 		private IWebElement SugnUpButton { get; set; }
 
 		[FindsBy(How = How.XPath, Using = "(//a[@class='button' and @href='/login'])[1]")]

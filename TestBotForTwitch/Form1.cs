@@ -13,6 +13,8 @@ namespace TestBotForTwitch
 		
 		private Int32 _countViewers;
 
+		public Dialogs Dialogs = new Dialogs(); 
+
 		public Form1()
 		{
 			InitializeComponent();
@@ -48,5 +50,33 @@ namespace TestBotForTwitch
 		{
 			Settings.StreamerUrl = textBox2.Text;
 		}
+
+		private void бунтToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			foreach (var item in Settings.ListBots)
+			{
+				item.Bunt();
+			}
+		}
+
+		private void смехToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			foreach (var item in Settings.ListBots)
+			{
+				item.Laught();
+			}
+		}
+
+		private void любопытныйToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void оДаунахToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Dialogs.StartSmallTalk(Thems.AboutDauns);
+		}
+
+
 	}
 }
