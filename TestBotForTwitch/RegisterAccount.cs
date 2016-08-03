@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using OpenQA.Selenium;
 
-using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium.Remote;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
 using System.Threading;
 using TestBotForTwitch.Pages;
 using TestBotForTwitch.Class;
@@ -96,5 +87,21 @@ namespace TestBotForTwitch
             signupPage.ClickCaptchaButton();
 
         }
+
+		public void RegisterUserInTwitch()
+		{
+
+			var ss = Files.GetLastName();
+			var aqw = Files.GetName();
+
+			RegistrationModel model = new RegistrationModel();
+			model.Name = aqw;
+			model.LastName = ss;
+
+
+			AccountsFabric fabric = new AccountsFabric(_driver, model);
+
+			fabric.RegisterAccount();
+		}
     }
 }
